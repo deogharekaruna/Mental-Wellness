@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+            background-image: url(MW-at-Work.jpg);
+        }
+
+       /* Doctor Section Styling */
+#find-doctor {
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#find-doctor h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+  color: #5c5c5c;
+  margin-bottom: 15px;
+}
+
+#find-doctor p {
+  font-size: 1.2rem;
+  color: #6d6d6d;
+  margin-bottom: 20px;
+}
+
+#find-doctor input {
+  width: 80%;
+  padding: 10px;
+  border: 2px solid #8ec5fc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: border 0.3s ease;
+}
+
+#find-doctor input:focus {
+  border-color: #e0c3fc;
+  outline: none;
+}
+
+#find-doctor button {
+  background: #8ec5fc;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#find-doctor button:hover {
+  background: #7dbffb;
+  transform: scale(1.1);
+}
+
+#find-doctor .hidden {
+  display: none;
+}
+
+#find-doctor #doctor-results {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+#find-doctor #doctor-results h3 {
+  font-size: 1.5rem;
+  color: #444;
+}
+
+#find-doctor #doctor-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+#find-doctor #doctor-results ul li {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+#find-doctor #doctor-results p {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 15px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DOCTORS REFERENCE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ai.html">AI assistant</a></li>
+                <li><a href="tips.html">Tips</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="mood tracker.html">mood tracker</a></li>
+                <li><a href="doctor.html">doctors</a></li>
+                <li><a href="about.html">About</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!--<section id="find-doctor">
+        <h2>Find a Doctor</h2>
+        <p>Search for mental health professionals:</p>
+        <div class="search-box">
+          <input type="text" id="doctor-search" placeholder="Enter specialty or location">
+          <button id="search-btn">Search</button>
+        </div>
+        <div id="loading" class="hidden">
+          <div class="spinner"></div>
+          <p>Fetching results...</p>
+        </div>
+        <div id="doctor-results" class="hidden"></div>
+      </section>-->
+
+     
+    <section id="find-doctor">
+      <h2>Find a Doctor</h2>
+      <p>Search for mental health professionals near you:</p>
+      <input type="text" id="doctor-search" placeholder="Enter location or specialty">
+      <button id="search-btn">Search</button>
+      <div id="doctor-results" class="hidden">
+        <h3>Suggested Doctors:</h3>
+        <ul>
+          <li>Dr. Sarah Johnson (Psychologist) - New York</li>
+          <li>Dr. Michael Brown (Psychiatrist) - Los Angeles</li>
+          <li>Dr. Emily White (Therapist) - Chicago</li>
+        </ul>
+        <p>Contact a professional for personalized help today!</p>
+      </div>
+    </section>
+    <section id="emergency-resources">
+      <h2>Emergency Resources</h2>
+      <p>If you're feeling overwhelmed, you're not alone. Reach out for help:</p>
+      <ul>
+          <li><a href="tel:123-456-7890" id="helpline">Call a Crisis Helpline</a></li>
+          <li><a href="https://example.com" id="support-center" target="_blank">Visit a Support Center</a></li>
+          <li><span id="text-help">Text "HELP" to 12345</span></li>
+      </ul>
+  </section>
+      <script src="doctor.js"></script>
+
+</body>
+</html>

@@ -1,46 +1,6 @@
-/*const habitForm = document.getElementById("habit-form");
-const habitList = document.getElementById("habit-list");
 
-let habits = JSON.parse(localStorage.getItem("habits")) || [];
 
-const renderHabits = () => {
-  habitList.innerHTML = habits
-    .map(
-      (habit, index) => `
-      <li class="habit ${habit.completed ? "complete" : ""}">
-        ${habit.name}
-        <button onclick="toggleHabit(${index})">${habit.completed ? "Undo" : "Complete"}</button>
-        <button onclick="deleteHabit(${index})">Delete</button>
-      </li>
-    `
-    )
-    .join("");
-};
 
-habitForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const habitInput = document.getElementById("habit").value;
-  if (habitInput) {
-    habits.push({ name: habitInput, completed: false });
-    localStorage.setItem("habits", JSON.stringify(habits));
-    renderHabits();
-    habitForm.reset();
-  }
-});
-
-const toggleHabit = (index) => {
-  habits[index].completed = !habits[index].completed;
-  localStorage.setItem("habits", JSON.stringify(habits));
-  renderHabits();
-};
-
-const deleteHabit = (index) => {
-  habits.splice(index, 1);
-  localStorage.setItem("habits", JSON.stringify(habits));
-  renderHabits();
-};
-
-renderHabits();*/
 // Select form, input, and list
 const habitForm = document.getElementById('habit-form');
 const habitInput = document.getElementById('habit-input');
@@ -81,3 +41,5 @@ habitForm.addEventListener('submit', (e) => {
   // Clear the input field
   habitInput.value = '';
 });
+let streak = 0;
+

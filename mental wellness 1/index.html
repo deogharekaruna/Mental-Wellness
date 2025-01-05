@@ -10,18 +10,19 @@
 <body>
 
     <header>
-        
              <h1>Mental wellness</h1>
         <nav class="navbar">
             <!--<div class="logo">MENTAL ILLNESS </div>-->
             <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
                 <li><a href="ai.html">AI assistant</a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-             
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="mood tracker.html">mood tracker</a></li>
+                <li><a href="doctor.html">doctors</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">login form</a></li>
+
 
             </ul>
         </nav>
@@ -32,6 +33,7 @@
         <p>We are committed to providing valuable information and resources to support mental wellness. Learn how to take care of your mind and live a fulfilling, balanced life.</p>
         <p>Your mental health companion. Track your moods, access resources, and find peace.</p>
     </section>
+
     <section id="assessment">
         <h2>Self-Assessment</h2>
         <form id="assessment-form">
@@ -47,6 +49,7 @@
       </section>
       <script src="assessment.js"></script><!--<section id="assessment">-->
         
+
         <section id="breathing">
             <h2>Guided Breathing Exercise</h2>
             <div id="breathing-circle"></div>
@@ -61,6 +64,7 @@
                     <source src="meditation.mp3" type="audio/mpeg" />
                   Your browser does not support the audio element.
                 </audio>
+                <canvas id="audio-visualizer"></canvas>
             </div>
             </section>
           
@@ -69,15 +73,25 @@
           <section id="wellness-tips">
             <h2>Daily Wellness Tip</h2>
             <p id="daily-tip">Click below to get your tip of the day!</p>
-            <button id="get-tip">Get Tip</button>
+            <button id="get-tip"data-tooltip="Get your daily tip for mental wellness!">Get Tip</button>
           </section>
           <script src="tips.js"></script>
+
 
           <section id="coping-game">
             <h2>Coping Mechanism Game</h2>
             <p>Match the stressor with a healthy coping strategy!</p>
             <div id="game-board"></div>
+            <div id="stressors">
+              <div draggable="true">Work Stress</div>
+              <div draggable="true">Anxiety</div>
+          </div>
+          <div id="coping-strategies">
+              <div>Exercise</div>
+              <div>Meditation</div>
+          </div>
           </section>
+
           <script src="games.js"></script>
 
           <!--<section id="habit-tracker">
@@ -89,6 +103,8 @@
             </form>
             <ul id="habit-list"></ul>
           </section>-->
+
+
           <section id="habit-tracker">
             <h2>Habit Tracker</h2>
             <p>Track your daily habits and stay consistent!</p>
@@ -104,8 +120,31 @@
             <ul id="habit-list">
               <!-- User habits will appear here -->
             </ul>
+            <p id="streak-counter">Current Streak: 0 Days</p>
           </section>
+
           <script src="habit list.js"></script>
+          <script src="navbar.js"></script>
+
+          <section id="community-forum">
+            <h2>Community Forum</h2>
+            <p>Join discussions with others who are working on their mental wellness. Share your thoughts, stories, and advice.</p>
+            <button onclick="window.location.href='forum.html'">Join the Forum</button>
+        </section>
+        <script src="community.js"></script>
+
+
+
+          <button id="dark-mode-toggle">Mode</button>
+          <script src="toggle dark mode.js"></script>
+          
+          
+          <div id="loading-screen">
+            <div class="spinner"></div>
+          </div>
+          <script src="loading.js"></script>
+
+
 
 
 
@@ -114,7 +153,7 @@
 
 
     <footer class="a">
-        <h3>Dhruvil and <br>Karodeoghare<br>
+        <h3>Dhruvil and <br>Karuna<br>
            developer</h3>
         <p>&copy; 2024 Mental Wellness</p>
     </footer>

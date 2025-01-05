@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+            background-image: url(MW-at-Work.jpg);
+            
+        }
+    
+ 
+   
+
+
+/* Centered Form Container */
+#auth-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Form Title */
+#auth-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* Input Fields */
+#auth-container input[type="email"],
+#auth-container input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+#auth-container input[type="email"]:focus,
+#auth-container input[type="password"]:focus {
+  border: 1px solid #007BFF;
+  background: #fff;
+  outline: none;
+}
+
+/* Buttons */
+#auth-container button {
+  width: 100%;
+  padding: 10px 0;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007BFF;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#auth-container button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+#auth-container button:active {
+  transform: translateY(0);
+}
+
+/* Signup Button Styling */
+#signup-btn {
+  background-color: #28a745;
+}
+
+#signup-btn:hover {
+  background-color: #218838;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>login form</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ai.html">AI assistant</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="mood tracker.html">mood tracker</a></li>
+                <li><a href="doctor.html">doctors</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">login form</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <div id="auth-container">
+        <h2>Login form</h2>
+        <input type="email" id="email" placeholder="Email"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <button id="login-btn">Login</button><br>
+        <button id="signup-btn">Sign Up</button><br>
+      </div>
+      <script src="login.js"></script>
+</body>
+</html>

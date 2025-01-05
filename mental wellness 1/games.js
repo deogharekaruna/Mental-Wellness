@@ -17,3 +17,22 @@ function createGameBoard() {
 }
 
 createGameBoard();
+const draggables = document.querySelectorAll("[draggable='true']");
+const dropzones = document.querySelectorAll("#coping-strategies div");
+
+draggables.forEach((draggable) => {
+    draggable.addEventListener("dragstart", () => {
+        draggable.classList.add("dragging");
+    });
+    draggable.addEventListener("dragend", () => {
+        draggable.classList.remove("dragging");
+    });
+});
+
+dropzones.forEach((zone) => {
+    zone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const dragging = document.querySelector(".dragging");
+        zone.appendChild(dragging);
+    });
+});
