@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        font-family: Arial;
+      }
+      
+      /* The grid: Four equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 25%;
+        padding: 10px;
+      }
+      
+      /* Style the images inside the grid */
+      .column img {
+        opacity: 0.8; 
+        cursor: pointer; 
+      }
+      
+      .column img:hover {
+        opacity: 1;
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* The expanding image container */
+      .container {
+        position: relative;
+        display: none;
+      }
+      
+      /* Expanding image text */
+      #imgtext {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        color: white;
+        font-size: 20px;
+      }
+      
+      /* Closable button inside the expanded image */
+      .closebtn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: white;
+        font-size: 35px;
+        cursor: pointer;
+      }
+      </style>
+</head>
+
+       
+<body>
+    <!--<section id="mood-tracker">
+        <h2>Mood Tracker</h2>
+        <form id="mood-form">
+          <label for="mood">Select your mood:</label>
+          <select id="mood">
+            <option value="happy">Happy</option>
+            <option value="neutral">Neutral</option>
+            <option value="sad">Sad</option>
+            <option value="anxious">Anxious</option>
+          </select>
+          <button type="submit">Log Mood</button>
+        </form>
+        <canvas id="mood-chart" width="400" height="200"></canvas>
+      </section>-->
+      <header>
+        
+        <h1>Mental wellness</h1>
+   <nav class="navbar">
+       <!--<div class="logo">MENTAL ILLNESS </div>-->
+       <ul class="nav-links">
+           <li><a href="ai.html">AI assistant</a></li>
+           <li><a href="index.html">Home</a></li>
+           <li><a href="about.html">About</a></li>
+           <li><a href="tips.html">Tips</a></li>
+           <li><a href="resources.html">Resources</a></li>
+           <li><a href="contact.html">Contact</a></li>
+           <li><a href="mood tracker.html">mood tracker</a></li>
+
+       </ul>
+   </nav>
+</header>
+
+      <section id="mood-tracker">
+        <p>Our mood tracker helps you monitor your emotional well-being over time, providing valuable insights into your mental health. Regular tracking can help identify patterns, triggers, and fluctuations in mood, making it easier to understand and manage your mental health. Whether you're dealing with anxiety, depression, or other mental health conditions, this tool can support your journey towards self-awareness and provide useful data for discussions with healthcare professionals. Stay proactive in your mental health care by using this tracker regularly!</p>
+        
+        <h2>Mood Tracker</h2>
+        <form id="mood-form">
+          <div style="text-align:center">
+            <h2>Tabbed Image Gallery</h2>
+            <p>Click on the images below:</p>
+          </div>
+          
+          <!-- The four columns -->
+          <div class="row">
+            <div class="column">
+              <img src="happy.jpg" alt="happy" style="width:100%" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+              <img src="neutral.jpg" alt="neutral" style="width:100%" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+              <img src="sad.jpg" alt="sad" style="width:100%" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+              <img src="anxiety.jpg" alt="anxiety" style="width:100%" onclick="myFunction(this);">
+            </div>
+          </div>
+          
+          <div class="container">
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+            <img id="expandedImg" style="width:100%">
+            <div id="imgtext"></div>
+          </div>
+          
+          <label for="mood">Select your mood:</label>
+          <select id="mood">
+            <option value="happy">Happy</option>
+            <option value="neutral">Neutral</option>
+            <option value="sad">Sad</option>
+            <option value="anxious">Anxious</option>
+          </select>
+          <button type="submit">Log Mood</button>
+        </form>
+        <canvas id="mood-chart" width="400" height="200"></canvas>
+        <div class="mood-history">
+          <h3>Mood History</h3>
+          <div id="history-list">
+            <!-- Mood history will appear here -->
+          </div>
+        </div>
+        <button class="reset-btn" id="reset-btn">Reset Data</button>
+      </section>
+      <script>
+        function myFunction(imgs) {
+          var expandImg = document.getElementById("expandedImg");
+          var imgText = document.getElementById("imgtext");
+          expandImg.src = imgs.src;
+          imgText.innerHTML = imgs.alt;
+          expandImg.parentElement.style.display = "block";
+        }
+        </script>
+    
+      <script src="mood tracker.js"></script>
+</body>
+</html>
