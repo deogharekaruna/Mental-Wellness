@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness AI</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+
+
+
+
+#chatbot {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#chatbox {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+#messages {
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    margin-top: 30px;
+    color: #777;
+    font-size: 0.9em;
+}
+div {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    #chatbot {
+        padding: 15px;
+    }
+
+    #chatbox {
+        max-width: 100%;
+    }
+
+    input[type="text"] {
+        width: 60%;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    #chatbot {
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 8px 15px;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+    
+}
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Mental Wellness AI</h1>
+        <br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="tips.html">Tips</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        // Sample responses for the mental wellness AI assistant
+const responses = {
+    "hello": "Hi! How can I assist you with your mental wellness today?",
+    "stress": "It's normal to feel stressed at times. Try deep breathing exercises or take a short walk to relax.",
+    "sad": "I'm sorry you're feeling sad. Remember, talking to someone you trust can help. You’re not alone.",
+    "happy": "That's great! Keeping a positive mindset is essential. Keep doing things that make you happy!",
+    "default": "I'm here to listen. How can I help you with your mental wellness?"
+};
+
+// Function to send user input and get response from AI assistant
+function sendMessage() {
+    const userInput = document.getElementById('user-input').value.trim().toLowerCase();
+    const messages = document.getElementById('messages');
+    
+    if (userInput !== "") {
+        // Display user message
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.textContent = `You: ${userInput}`;
+        userMessageDiv.style.textAlign = "left";
+        messages.appendChild(userMessageDiv);
+
+        // Get AI response
+        const aiResponse = responses[userInput] || responses["default"];
+        const aiMessageDiv = document.createElement('div');
+        aiMessageDiv.textContent = `AI: ${aiResponse}`;
+        aiMessageDiv.style.textAlign = "right";
+        aiMessageDiv.style.fontWeight = "bold";
+        messages.appendChild(aiMessageDiv);
+        
+        // Clear the input field
+        document.getElementById('user-input').value = "";
+        
+        // Scroll to the bottom of the chat window
+        messages.scrollTop = messages.scrollHeight;
+    }
+}
+
+    </script>
+    
+
+    
+
+    <section id="chatbot">
+        <h2 style="background-color: #777;color: antiquewhite;">Sad &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stress &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;happy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default</h2>
+      <h2> Talk to our AI Assistant  </h2>
+        <div id="chatbox">
+            <div id="messages"></div>
+            <input type="text" id="user-input" placeholder="How are you feeling today?" />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mental Wellness AI. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
