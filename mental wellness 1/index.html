@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <header>
+        
+             <h1>Mental wellness</h1>
+        <nav class="navbar">
+            <!--<div class="logo">MENTAL ILLNESS </div>-->
+            <ul class="nav-links">
+                <li><a href="ai.html">AI assistant</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+             
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="mood tracker.html">mood tracker</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Welcome to the Mental Wellness Website</h2>
+        <p>We are committed to providing valuable information and resources to support mental wellness. Learn how to take care of your mind and live a fulfilling, balanced life.</p>
+        <p>Your mental health companion. Track your moods, access resources, and find peace.</p>
+    </section>
+    <section id="assessment">
+        <h2>Self-Assessment</h2>
+        <form id="assessment-form">
+          <label for="q1">How often do you feel anxious?</label>
+          <select id="q1" name="q1">
+            <option value="rarely">Rarely</option>
+            <option value="sometimes">Sometimes</option>
+            <option value="often">Often</option>
+          </select>
+          <button type="submit">Submit</button>
+        </form>
+        <div id="assessment-result"></div>
+      </section>
+      <script src="assessment.js"></script><!--<section id="assessment">-->
+        
+        <section id="breathing">
+            <h2>Guided Breathing Exercise</h2>
+            <div id="breathing-circle"></div>
+            <p id="breathing-instructions">Follow the circle to breathe in and out.</p>
+            <button id="start-breathing">Start Exercise</button>
+            </section>
+           <section>
+            <div id="meditation">
+                <h2>Guided Meditation</h2>
+                <p>Click play to start your mindfulness session:</p>
+                <audio id="meditation-audio" controls>
+                    <source src="meditation.mp3" type="audio/mpeg" />
+                  Your browser does not support the audio element.
+                </audio>
+            </div>
+            </section>
+          
+          <script src="breathing.js"></script>
+
+          <section id="wellness-tips">
+            <h2>Daily Wellness Tip</h2>
+            <p id="daily-tip">Click below to get your tip of the day!</p>
+            <button id="get-tip">Get Tip</button>
+          </section>
+          <script src="tips.js"></script>
+
+          <section id="coping-game">
+            <h2>Coping Mechanism Game</h2>
+            <p>Match the stressor with a healthy coping strategy!</p>
+            <div id="game-board"></div>
+          </section>
+          <script src="games.js"></script>
+
+          <!--<section id="habit-tracker">
+            <h2>Habit Tracker</h2>
+            <form id="habit-form">
+              <label for="habit">Enter a habit:</label>
+              <input type="text" id="habit" placeholder="e.g., Drink water" />
+              <button type="submit">Add Habit</button>
+            </form>
+            <ul id="habit-list"></ul>
+          </section>-->
+          <section id="habit-tracker">
+            <h2>Habit Tracker</h2>
+            <p>Track your daily habits and stay consistent!</p>
+            <form id="habit-form">
+              <input
+                 type="text"
+                id="habit-input"
+                placeholder="Enter a habit (e.g., Drink water)"
+                required
+              />
+              <button type="submit">Add Habit</button>
+            </form>
+            <ul id="habit-list">
+              <!-- User habits will appear here -->
+            </ul>
+          </section>
+          <script src="habit list.js"></script>
+
+
+
+
+
+
+
+    <footer class="a">
+        <h3>Dhruvil and <br>Karodeoghare<br>
+           developer</h3>
+        <p>&copy; 2024 Mental Wellness</p>
+    </footer>
+    <script src="ai.js"></script>
+</body>
+</html>
