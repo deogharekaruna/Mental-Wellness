@@ -27,4 +27,3 @@ document.getElementById('signup-btn').onclick = () => {
       console.error(error.message);
     });
 }
-
