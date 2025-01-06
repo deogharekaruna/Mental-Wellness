@@ -65,45 +65,45 @@
 
 // Interactivity for the Find a Doctor section
 document.addEventListener("DOMContentLoaded", () => {
-  const searchBtn = document.getElementById("search-btn");
-  const doctorSearch = document.getElementById("doctor-search");
-  const doctorResults = document.getElementById("doctor-results");
-
-  searchBtn.addEventListener("click", () => {
-    const query = doctorSearch.value.trim();
-
-    if (query === "") {
-      alert("Please enter a location or specialty to search for doctors.");
-    } else {
-      alert(Searching for doctors near: "${query}".);
-      
-      // Show the results (this is static for now)
-      doctorResults.classList.remove("hidden");
-    }
+    const searchBtn = document.getElementById("search-btn");
+    const doctorSearch = document.getElementById("doctor-search");
+    const doctorResults = document.getElementById("doctor-results");
+  
+    searchBtn.addEventListener("click", () => {
+      const query = doctorSearch.value.trim();
+  
+      if (query === "") {
+        alert("Please enter a location or specialty to search for doctors.");
+      } else {
+        alert(Searching for doctors near: "${query}".);
+        
+        // Show the results (this is static for now)
+        doctorResults.classList.remove("hidden");
+      }
+    });
   });
-});
-
-
-// Add interactivity to Emergency Resources links
-document.addEventListener("DOMContentLoaded", () => {
-  const helplineLink = document.querySelector("#helpline");
-  const supportCenterLink = document.querySelector("#support-center");
-  const textHelp = document.querySelector("#text-help");
-
-  // Helpline link alert
-  helplineLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      alert("Calling the Crisis Helpline: 123-456-7890");
-      window.location.href = helplineLink.href;
+  
+  
+  // Add interactivity to Emergency Resources links
+  document.addEventListener("DOMContentLoaded", () => {
+    const helplineLink = document.querySelector("#helpline");
+    const supportCenterLink = document.querySelector("#support-center");
+    const textHelp = document.querySelector("#text-help");
+  
+    // Helpline link alert
+    helplineLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        alert("Calling the Crisis Helpline: 123-456-7890");
+        window.location.href = helplineLink.href;
+    });
+  
+    // Support Center link alert
+    supportCenterLink.addEventListener("click", () => {
+        alert("You are being redirected to the Support Center website.");
+    });
+  
+    // Text Help alert
+    textHelp.addEventListener("click", () => {
+        alert("Text 'HELP' to 12345 for immediate assistance.");
+    });
   });
-
-  // Support Center link alert
-  supportCenterLink.addEventListener("click", () => {
-      alert("You are being redirected to the Support Center website.");
-  });
-
-  // Text Help alert
-  textHelp.addEventListener("click", () => {
-      alert("Text 'HELP' to 12345 for immediate assistance.");
-  });
-});

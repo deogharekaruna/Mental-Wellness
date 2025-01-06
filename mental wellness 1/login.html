@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body{
-            background-image: url(MW-at-Work.jpg);
+           background-image: url(MW-at-Work.jpg);
+           background-repeat: no-repeat;
+           background-size:cover;
+           background-attachment: fixed;
+
             
         }
     
@@ -24,6 +28,8 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin-top: 5vw;
+  margin-left: 32vw;
 }
 
 /* Form Title */
@@ -92,13 +98,13 @@
 <body>
     <header>
         <h1>login form</h1>
-        <nav>
-            <ul>
+        <nav class="navbar">
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="ai.html">AI assistant</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="mood tracker.html">mood tracker</a></li>
+                
+                
                 <li><a href="doctor.html">doctors</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="login.html">login form</a></li>
@@ -114,5 +120,10 @@
         <button id="signup-btn">Sign Up</button><br>
       </div>
       <script src="login.js"></script>
+      <footer class="a">
+        <h3>Dhruvil and <br>Karuna<br>
+           developer</h3>
+        <p>&copy; 2024 Mental Wellness</p>
+    </footer>
 </body>
 </html>

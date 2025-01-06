@@ -6,9 +6,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body{
+        /* body{
             background-image: url(MW-at-Work.jpg);
-        }
+        } */
+         body{
+            background-color: silver;
+         }
 
        /* Doctor Section Styling */
 #find-doctor {
@@ -106,16 +109,17 @@
 <body>
     <header>
         <h1>DOCTORS REFERENCE</h1>
-        <nav>
-            <ul>
+        <nav class="navbar">
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="ai.html">AI assistant</a></li>
-                <li><a href="tips.html">Tips</a></li>
+              
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="mood tracker.html">mood tracker</a></li>
+                
+              
                 <li><a href="doctor.html">doctors</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="login.html">login form</a></li>
 
             </ul>
         </nav>
@@ -135,7 +139,22 @@
         <div id="doctor-results" class="hidden"></div>
       </section>-->
 
-     
+     <div class="image"><img src="q.jpg" class="side">
+        <img src="w.jpg" class="side">
+        <img src="e.jpg" class="side">
+        <img src="r.jpg"class="side">
+        <img src="t.jpg" class="side">
+        <img src="y.jpg" class="side">
+        <img src="u.jpg" class="side">
+        <img src="sad.jpg" class="side"> </div>
+        <div class="rightimage"><img src="sad.jpg" class="side">
+            <img src="u.jpg" class="side">
+            <img src="y.jpg" class="side">
+            <img src="t.jpg"class="side">
+            <img src="r.jpg" class="side">
+            <img src="e.jpg" class="side">
+            <img src="w.jpg" class="side">
+            <img src="q.jpg" class="side"> </div>
     <section id="find-doctor">
       <h2>Find a Doctor</h2>
       <p>Search for mental health professionals near you:</p>
@@ -151,6 +170,7 @@
         <p>Contact a professional for personalized help today!</p>
       </div>
     </section>
+    
     <section id="emergency-resources">
       <h2>Emergency Resources</h2>
       <p>If you're feeling overwhelmed, you're not alone. Reach out for help:</p>
@@ -160,6 +180,11 @@
           <li><span id="text-help">Text "HELP" to 12345</span></li>
       </ul>
   </section>
+  <footer class="a">
+    <h3>Dhruvil and <br>Karuna<br>
+       developer</h3>
+    <p>&copy; 2024 Mental Wellness</p>
+</footer>
       <script src="doctor.js"></script>
 
 </body>

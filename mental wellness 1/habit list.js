@@ -42,4 +42,3 @@ habitForm.addEventListener('submit', (e) => {
   habitInput.value = '';
 });
 let streak = 0;
-
