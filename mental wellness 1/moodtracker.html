@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness</title>
+    
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+          
+            background-color: black;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            justify-content: space-around;
+            display: flex;
+            text-align: center;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 30px;
+            color: white;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  margin-left: 32vw;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #1d0404;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.navbar.scrolled {
+  background-color: #f7f7f7;
+  transform: scale(0.95);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+        /* Main Section */
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        section h2 {
+            font-size: 2em;
+            color: #4CAF50;
+        }
+
+        section p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Mood Tracker */
+        .mood-tracker {
+            background-color: #e0f7fa;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .mood-tracker h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .mood-tracker input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2em;
+            margin: 10px 0;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+        }
+
+        .mood-tracker button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .mood-tracker button:hover {
+            background-color: #45a049;
+        }
+
+        /* Wellness Tips */
+        .wellness-tips {
+            background-color: #f9f9f9;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .wellness-tips h3 {
+            font-size: 2em;
+            color: #4CAF50;
+        }
+
+        .tip {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
+        .tip:hover {
+            background-color: #c3e6cb;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .mood-tracker {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .wellness-tips {
+                padding: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mental wellness</h1>
+<nav class="navbar">
+   <!--<div class="logo">MENTAL ILLNESS </div>-->
+   <ul class="nav-links">
+     <li><a href="index.html">Home</a></li>
+       <li><a href="ai.html">AI assistant</a></li>
+       <li><a href="resourses.html">Resources</a></li>
+       
+       
+       <li><a href="doctor.html">doctors</a></li>
+       <li><a href="about.html">About</a></li>
+       <li><a href="login.html">login form</a></li>
+
+
+   </ul>
+</nav>
+</header>
+
+    
+    <!-- Main Section: Welcome -->
+    <section id="home">
+        <h2>Welcome to Mental Wellness</h2>
+        <p>We are here to help you take care of your mind, body, and soul. Explore our resources, take a mood tracker quiz, and discover helpful tips for your mental health.</p>
+    </section>
+
+    <!-- Mood Tracker Section -->
+    <section id="tracker" class="mood-tracker">
+        <h3>Track Your Mood</h3>
+        <p>Take a moment to reflect on how you are feeling today. This tool can help you monitor your emotional well-being.</p>
+        <form id="moodForm">
+            <input type="text" id="moodInput" placeholder="How are you feeling today?" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="moodResponse" style="margin-top: 20px;"></div>
+    </section>
+
+    <!-- Wellness Tips Section -->
+    <section id="tips" class="wellness-tips">
+        <h3>Wellness Tips</h3>
+        <div class="tip">
+            <h4>Practice Deep Breathing</h4>
+            <p>Take deep breaths to calm your mind and reduce stress.</p>
+        </div>
+        <div class="tip">
+            <h4>Stay Active</h4>
+            <p>Exercise helps improve mood, boost energy, and reduce anxiety.</p>
+        </div>
+        <div class="tip">
+            <h4>Reach Out</h4>
+            <p>Talking to a loved one or a professional can make a big difference in your mental health.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <p>&copy; 2024 Mental Wellness</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="moodtracker.js">
+        
+    </script>
+
+</body>
+</html>

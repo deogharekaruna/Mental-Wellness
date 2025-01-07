@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness - Mood Tracker</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* k  General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  header {
+          
+          background-color: black;
+          padding: 20px;
+          text-align: center;
+          color: white;
+          justify-content: space-around;
+          display: flex;
+          text-align: center;
+          align-items: center;
+      }
+
+      header h1 {
+          font-size: 30px;
+          color: white;
+          margin: 0;
+          font-weight: bold;
+          
+      }
+
+      .navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #333;
+margin-left: 32vw;
+}
+.navbar {
+position: sticky;
+top: 0;
+background-color: #1d0404;
+z-index: 1000;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease-in-out;
+}
+.navbar.scrolled {
+background-color: #f7f7f7;
+transform: scale(0.95);
+}
+
+.nav-links {
+list-style: none;
+display: flex;
+}
+
+.nav-links li {
+margin: 0 1rem;
+font-weight: bold;
+}
+
+.nav-links a {
+color: white;
+text-decoration: none;
+}
+  main {
+    padding: 2rem;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  /*  k brething css*/
+  #breathing-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: lightblue;
+    margin: 2rem auto;
+    animation: none;
+  }
+  
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1);
+      background-color: lightblue;
+    }
+    50% {
+      transform: scale(1.5);
+      background-color: purple;
+    }
+  }
+  
+  #breathing-instructions {
+    text-align: center;
+    font-size: 1.2rem;
+
+    #meditation {
+        text-align: center;
+        margin: 2rem 0;
+      }
+  }
+  /* k wellness tips*/
+  #wellness-tips {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  #daily-tip {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  /* k games*/
+
+  #game-board {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .card {
+    background: #eee;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  /*  k mood trek
+  #mood-tracker {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  #mood-chart {
+    margin-top: 1rem;
+  }*/
+  #mood-tracker {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #mood-tracker h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  form {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+
+  select {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background: #007bff;
+    color: white;
+    font-size: 1rem;
+  }
+
+  button:hover {
+    background: #0056b3;
+  }
+
+  #mood-chart {
+    margin-top: 2rem;
+  }
+
+  .mood-history {
+    margin-top: 2rem;
+    text-align: left;
+  }
+
+  .mood-history h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .history-item {
+    background: #f1f1f1;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .reset-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background: #ff4444;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .reset-btn:hover {
+    background: #cc0000;
+  }
+  /* k habbit list*/
+  #habit-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /*.habit {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .complete {
+    text-decoration: line-through;
+    color: gray;
+  }*/
+
+ 
+  #habit-tracker {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  #habit-form {
+    margin-bottom: 1rem;
+  }
+  
+  #habit-input {
+    padding: 0.5rem;
+    width: 70%;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  #habit-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #habit-list li {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: green;
+  }
+
+  /* dhruvil work*/
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    /* background-image: url(MW-at-Work.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; */
+    background-color: black;
+        
+    }
+h3{
+        margin-left: -70vw;
+        color: silver;
+    }
+
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px ;
+    position: relative;
+    width: 100%;
+    
+   
+}
+
+section {
+    padding: 100px;
+    margin: 20px;
+    background-color: snow;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px orange;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.a {
+    margin-top: 100px;
+}
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px;
+        width: 98%;
+    }
+    body{
+        background-image: url(MW-at-Work.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 10px 5px;
+    }
+
+    section {
+        margin: 10px;
+        padding: 50px;
+        box-shadow: 0 2px 5px orange;
+    }
+
+    form {
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 8px;
+        width: 100%;
+        
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    body{
+        background-image: url(MW-at-Work.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: -60px;
+        background-position-y: -50px ;
+       
+        background-attachment: fixed;
+        
+        
+    }
+    header {
+        padding: 8px;
+        width: 100%;
+        height: 150px;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 10px 5px;
+        text-align: center;
+        
+    }
+     h1{
+        margin-top: 50px;
+     }
+    section {
+        margin: 5px;
+        padding: 60px;
+        margin-top: 150px;
+       
+    }
+
+    form {
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+    }
+   h3{
+    margin-left: 5px;
+   }
+    footer {
+        font-size: 12px;
+        padding: 8px;
+        width: 100%;
+        height: 100px;
+    
+        
+    }
+   
+    
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mental wellness</h1>
+   <nav class="navbar">
+       <!--<div class="logo">MENTAL ILLNESS </div>-->
+       <ul class="nav-links">
+         <li><a href="index.html">Home</a></li>
+           <li><a href="ai.html">AI assistant</a></li>
+           <li><a href="resourses.html">Resources</a></li>
+           
+           
+           <li><a href="doctor.html">doctors</a></li>
+           <li><a href="about.html">About</a></li>
+           <li><a href="login.html">login form</a></li>
+
+
+       </ul>
+   </nav>
+</header>
+
+    <section id="mood-tracker" class="section">
+        <h2>Record your mood (24hrs)</h2>
+        <p>Track your emotional well-being over time and identify patterns in your mood to better understand your mental health. Regular tracking can help you manage triggers and enhance your overall wellness.</p>
+
+        <form id="mood-form">
+            <label for="mood" aria-label="Select your mood">Mood</label>
+            <select id="mood" name="mood">
+                <option value="happy">Happy</option>
+                <option value="neutral">Neutral</option>
+                <option value="sad">Sad</option>
+                <option value="anxious">Anxious</option>
+            </select>
+            <button type="submit">Log Mood</button>
+        </form>
+
+        <div class="chart-container">
+            <canvas id="mood-chart" width="400" height="200" aria-label="Mood chart" role="img"></canvas>
+        </div>
+
+        <div class="mood-history">
+            <h3>Mood History</h3>
+            <div id="history-list"></div>
+        </div>
+
+        <button class="reset-btn" id="reset-btn">Reset Data</button>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="games.js"></script>
+</body>
+</html>

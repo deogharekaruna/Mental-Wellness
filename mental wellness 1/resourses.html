@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness Resources</title>
+    <link rel="stylesheet" href="styles.css">
+   <style>
+    body{
+       
+        background-image: url(MW-at-Work.jpg);
+    }
+    section{
+        margin-left: 3vw;
+        width: 86vw;
+    }
+    header{
+        width: 1309px;
+    }
+    footer{
+        width: 1317px;
+
+    }
+   </style>
+</head>
+<body>
+    <header>
+        <h1>Mental Wellness Resources</h1>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ai.html">AI assistant</a></li>
+                <li><a href="resourses.html">Resources</a></li>
+               
+                
+                <li><a href="doctor.html">docters</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">login form</a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+
+    <!--<section>
+        <h2>External Mental Health Resources</h2>
+        <p>If you or someone you know is struggling with mental health, there are resources available to help:</p>
+        <ul>
+            <li><a href="https://www.mentalhealth.gov" target="_blank">National Institute of Mental Health</a></li>
+            <li><a href="https://www.samhsa.gov" target="_blank">Substance Abuse and Mental Health Services Administration</a></li>
+            <li><a href="https://www.crisistextline.org" target="_blank">Crisis Text Line</a></li>
+            <li><a href="https://www.psychologytoday.com" target="_blank">Find a Therapist - Psychology Today</a></li>
+        </ul>
+    </section>-->
+    <section id="resources">
+        <h2>Resources</h2>
+      
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <input type="text" id="resource-search" placeholder="Search for resources..." />
+          <button id="search-btn">Search</button>
+        </div>
+      
+        <!-- Categories -->
+        <div class="categories">
+          <button class="category-btn" data-category="all">All</button>
+          <button class="category-btn" data-category="articles">Articles</button>
+          <button class="category-btn" data-category="videos">Videos</button>
+          <button class="category-btn" data-category="books">Books</button>
+          <button class="category-btn" data-category="tools">Tools</button>
+        </div>
+      
+        <!-- Featured Resources -->
+        <h3>Featured Resources</h3>
+        <div class="featured-resources">
+          <div class="resource-card">
+            <h4>Mindfulness Guide</h4>
+            <p>A step-by-step guide to mindfulness for beginners.</p>
+            <a href="mindfulness.pdf" download>Download</a>
+          </div>
+          <div class="resource-card">
+            <h4>Stress Management Video</h4>
+            <p>Learn effective stress management techniques in this video.</p>
+            <a href="https://youtu.be/cL5GXQMkjMU?si=s5QwSCW1KFcgBlbU" target="_blank">Watch Now</a>
+          </div>
+        </div>
+      
+        <!-- All Resources -->
+        <h3>All Resources</h3>
+        <div class="resources-list" id="resources-list">
+          <div class="resource-card" data-category="articles">
+            <h4>Article: Understanding Anxiety</h4>
+            <p>An in-depth article about managing anxiety effectively.</p>
+            <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.who.int%2Fnews-room%2Ffact-sheets%2Fdetail%2Fmental-disorders&psig=AOvVaw3aDIr0t7MTt68vSpoUbFjb&ust=1736162469148000&source=images&cd=vfe&opi=89978449&ved=0CAQQn5wMahcKEwjosKmru96KAxUAAAAAHQAAAAAQBA" target="_blank">Read More</a>
+          </div>
+          <div class="resource-card" data-category="videos">
+            <h4>Video: Guided Meditation</h4>
+            <p>Relax with this 10-minute guided meditation video.</p>
+            <a href="https://youtu.be/BWMcR35D-cE?si=o8PA70fL5ThyLYH9" target="_blank">Watch Now</a>
+            <a href="https://youtu.be/BWMcR35D-cE?si=o8PA70fL5ThyLYH9" target="_blank">Watch Now</a>
+
+          </div>
+          <div class="resource-card" data-category="books">
+            <h4>Book: Mental Wellness Handbook</h4>
+            <p>A comprehensive guide to improving mental health.</p>
+            <a href="https://example.com/book" target="_blank">Buy Now</a>
+          </div>
+          <div class="resource-card" data-category="tools">
+            <h4>Tool: Mood Tracker</h4>
+            <p>Track your daily mood with this interactive tool.</p>
+            <a href="moodtracker.html" target="_blank">Use Tool</a>
+          </div>
+          <div id="habit-tracker">
+            <h2>Habit Tracker</h2>
+            <p>Track your daily habits and stay consistent!</p>
+            <form id="habit-form">
+              <t><input
+                 type="text"
+                id="habit-input"
+                placeholder="Enter a habit (e.g., Drink water)"
+                required
+              />
+              <button type="submit">Add Habit</button>
+            </form>
+            <ul id="habit-list">
+              <!-- User habits will appear here -->
+            </ul>
+            <p id="streak-counter">Current Streak: 0 Days</p>
+          </div>
+
+          <script src="habit list.js"></script>
+          <script src="navbar.js"></script>
+        </div>
+      </section>
+      <script src="resource.js"></script>
+
+      <footer class="a">
+        <h3>Dhruvil and <br>Karuna<br>
+           developer</h3>
+        <p>&copy; 2024 Mental Wellness</p>
+    </footer>
+</body>
+</html>

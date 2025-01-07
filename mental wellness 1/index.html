@@ -7,8 +7,150 @@
     <link rel="stylesheet" href="styles.css">
     <style>
       body{
-        background-color: brown;
+        background-image: url(MW-at-Work.jpg);
+       
       }
+     
+      
+      section{
+        background-image: url(e.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+       
+      }
+      section p{
+        color: #45a049;
+      }
+      h1 {
+        color: white;
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 16px;
+        color: #555;
+      }
+
+      #memory-game {
+    text-align: center;
+    margin: 50px 0;
+    
+    padding: 20px;
+    background: linear-gradient(to right, #ff9800, #f44336);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 350px;
+    margin: 20px 0;
+    background-color: #fff;
+    padding: 10px;
+    margin-left: -1vw;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.card {
+    width: 45px;
+    height: 80px;
+    background-color: #4caf50;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.card.flipped {
+    background-color: #2196f3;
+    color: red;
+    cursor: default;
+}
+
+
+      #start-memory-game {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#start-memory-game:hover {
+    background-color: #2196f3;
+}
+/* Number Guessing Game Styles */
+#number-guessing {
+    text-align: center;
+    background-color: silver;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px auto;
+    
+}
+
+#number-guessing h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#number-guessing p {
+    font-size: 16px;
+    color: #555;
+}
+
+#guess {
+    padding: 10px;
+    width: 150px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#message {
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
+}
+
+#attempts {
+    font-weight: bold;
+    font-size: 18px;
+}
+
     </style>
 </head>
 <body>
@@ -20,7 +162,7 @@
             <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
                 <li><a href="ai.html">AI assistant</a></li>
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="resourses.html">Resources</a></li>
                 
                 
                 <li><a href="doctor.html">doctors</a></li>
@@ -31,7 +173,37 @@
             </ul>
         </nav>
     </header>
-<div class="game"></div>
+    <div class="game">
+      <b style="color: #555;font-size: 60px;margin-left: 3vw;">#GAME 1</b>
+    <div id="memory-game">
+      <h2>Memory Match Game</h2>
+      <p>Flip the cards to find the matching pairs!</p>
+      <div class="game-grid" id="game-grid">
+          <!-- Cards will be dynamically added here -->
+      </div>
+      <p>Score: <span id="memory-score">0</span></p>
+      <button id="start-memory-game">Start Game</button>
+    </div>
+      <br><br><br><br><br><b style="color: #555;font-size: 60px;margin-left: 3vw;">#GAME 2</b><br><br><br><br><br>
+      <div id="number-guessing">
+        <h2>Guess the Number</h2>
+        <p>Pick a number between 1 and 100:</p>
+        <input type="number" id="guess" placeholder="Enter your guess">
+        <button onclick="checkGuess()">Submit Guess</button>
+        <p id="message"></p>
+
+        <p>Attempts: <span id="attempts">0</span></p>
+    </div>
+    
+   <b style="color: #333;"> Guess the Number: A Fun Challenge for the Mind</b><br>
+<p style="font-size: 20px; margin: 10px;">Engage your brain with a number guessing game! Not only is it a fun way to pass the time, but it also encourages focus and concentration—skills that can be helpful when managing mental health challenges like anxiety, depression, or attention difficulties.</p>
+<br><br>
+<b style="color: #333;">How the Game Relates to Mental Well-Being</b><br>
+<p style="font-size: 20px;margin: 10px;">Playing a game like "Guess the Number" can help improve cognitive functioning by promoting concentration, patience, and emotional regulation. Mental health conditions often challenge these abilities, and engaging in simple activities like this can serve as a mindful practice to help improve mental resilience.</p>
+    <script src="cards.js">
+    </script>
+  </div>
+
     <section>
         <h2>Welcome to the Mental Wellness Website</h2>
         <p>We are committed to providing valuable information and resources to support mental wellness. Learn how to take care of your mind and live a fulfilling, balanced life.</p>
@@ -60,7 +232,8 @@
             <p id="breathing-instructions">Follow the circle to breathe in and out.</p>
             <button id="start-breathing">Start Exercise</button>
             </section>
-           <section>
+           
+           <section id="meditation">
             <div id="meditation">
                 <h2>Guided Meditation</h2>
                 <p>Click play to start your mindfulness session:</p>
@@ -70,8 +243,8 @@
                 </audio>
                 <canvas id="audio-visualizer"></canvas>
             </div>
-            </section>
-          
+            </section> 
+           
           <script src="breathing.js"></script>
 
           <section id="wellness-tips">
@@ -83,17 +256,13 @@
 
 
           <section id="coping-game">
-            <h2>Coping Mechanism Game</h2>
-            <p>Match the stressor with a healthy coping strategy!</p>
-            <div id="game-board"></div>
-            <div id="stressors">
-              <div draggable="true">Work Stress</div>
-              <div draggable="true">Anxiety</div>
-          </div>
-          <div id="coping-strategies">
-              <div>Exercise</div>
-              <div>Meditation</div>
-          </div>
+            <h2>Stress releasing Game(pie chart)</h2>
+            <p>Compare your mood in dailylife in the form of pie chart</p>
+            <br>
+            <br>
+
+            <!-- <div id="game-board"></div> -->
+            <button style="background-color: green;font-weight: bold;font-size: x-large;"><a href="game.html">Play</a></button>
           </section>
 
           <script src="games.js"></script>
@@ -109,25 +278,7 @@
           </section>-->
 
 
-          <section id="habit-tracker">
-            <h2>Habit Tracker</h2>
-            <p>Track your daily habits and stay consistent!</p>
-            <form id="habit-form">
-              <input
-                 type="text"
-                id="habit-input"
-                placeholder="Enter a habit (e.g., Drink water)"
-                required
-              />
-              <button type="submit">Add Habit</button>
-            </form>
-            <ul id="habit-list">
-              <!-- User habits will appear here -->
-            </ul>
-            <p id="streak-counter">Current Streak: 0 Days</p>
-          </section>
-
-          <script src="habit list.js"></script>
+         
           <script src="navbar.js"></script>
 
           <section id="community-forum">
@@ -148,19 +299,49 @@
           </div>
           <script src="loading.js"></script>
 
-
-
-
-
-
-
-
-
-    <footer class="a">
+      <footer class="a">
         <h3>Dhruvil and <br>Karuna<br>
            developer</h3>
         <p>&copy; 2024 Mental Wellness</p>
     </footer>
+   
     <script src="ai.js"></script>
+    <script src="cards.js">
+    </script>
+    <script>
+      // JavaScript for the Number Guessing Game
+
+let randomNumber = Math.floor(Math.random() * 100) + 1; // Generate a random number between 1 and 100
+let attempts = 0; // Initialize attempts count
+
+// Function to check the user's guess
+function checkGuess() {
+    const userGuess = document.getElementById("guess").value; // Get the user's guess
+    const messageElement = document.getElementById("message"); // Get the message element
+    const attemptsElement = document.getElementById("attempts"); // Get the attempts element
+
+    if (userGuess === "") {
+        messageElement.textContent = "Please enter a number!";
+        return; // Exit if no input
+    }
+
+    attempts++; // Increment the attempts count
+    attemptsElement.textContent = attempts; // Update the attempts display
+
+    // Check if the guess is correct
+    if (userGuess < randomNumber) {
+        messageElement.textContent = "Too low! Try again."; // Provide feedback for too low guess
+    } else if (userGuess > randomNumber) {
+        messageElement.textContent = "Too high! Try again."; // Provide feedback for too high guess
+    } else {
+        messageElement.textContent = `Congratulations! You've guessed the number in ${attempts} attempts.`; // Correct guess message
+        // Optionally, restart the game after a correct guess
+        randomNumber = Math.floor(Math.random() * 100) + 1; // Generate a new random number
+        attempts = 0; // Reset attempts count
+        attemptsElement.textContent = attempts; // Reset attempts display
+    }
+}
+
+    </script>
 </body>
 </html>
