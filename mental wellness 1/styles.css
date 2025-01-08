@@ -1,4 +1,77 @@
-/* k  General styles */
+  /* Black Navbar with Responsive Design */
+.navbar {
+  background-color: #000; /* Black background */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff; /* White text */
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff9800; /* Orange color on hover */
+  text-shadow: 0 1px 5px rgba(255, 152, 0, 0.8);
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+      flex-direction: column;
+      display: none;
+      background-color: #000;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .navbar .menu-toggle {
+      display: block;
+      cursor: pointer;
+      color: #fff;
+      font-size: 24px;
+  }
+}
+
+.navbar .menu-toggle {
+  display: none;
+}
+  
+  
+  /* k  General styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;

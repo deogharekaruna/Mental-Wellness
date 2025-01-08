@@ -127,6 +127,107 @@
             background-color: #45a049;
         }
 
+        /* habit tracker*/
+
+        #habit-tracker {
+  /*background-color: #f4f4f4; /* Light gray background for contrast */
+  /*padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 20px auto; /* Center the habit tracker on the page *
+  text-align: center;*/
+  background-color: #e0f7fa;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            margin: 0 auto;
+}
+
+#habit-tracker h2 {
+ /* font-size: 24px;
+  color: #333; /* Dark text color for contrast *
+  margin-bottom: 10px;*/
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+#habit-tracker p {
+  font-size: 16px;
+  color: #555; /* Subtle text color */
+  margin-bottom: 20px;
+}
+
+#habit-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between input and button */
+  margin-bottom: 15px;
+}
+
+#habit-input {
+  width: 70%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#habit-form button {
+  padding: 8px 15px;
+  font-size: 14px;
+  color: white;
+  background-color: #4caf50; /* Green button */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#habit-form button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+#habit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+#habit-list li {
+  background-color: #e8f5e9; /* Light green background for habit items */
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#habit-list li button {
+  background-color: #f44336; /* Red for delete */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+#habit-list li button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+#streak-counter {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
         /* Wellness Tips */
         .wellness-tips {
             background-color: #f9f9f9;
@@ -226,6 +327,27 @@
         </form>
         <div id="moodResponse" style="margin-top: 20px;"></div>
     </section>
+    <section>
+        <div id="habit-tracker">
+          <h2>Habit Tracker</h2>
+          <p>Track your daily habits and stay consistent!</p>
+          <form id="habit-form">
+            <t><input
+               type="text"
+              id="habit-input"
+              placeholder="Enter a habit (e.g., Drink water)"
+              required
+            />
+            <button type="submit">Add Habit</button>
+          </form>
+          <ul id="habit-list">
+            <!-- User habits will appear here -->
+          </ul>
+          <p id="streak-counter">Current Streak: 0 Days</p>
+        </div>
+      </section>
+
+        <script src="habit list.js"></script>
 
     <!-- Wellness Tips Section -->
     <section id="tips" class="wellness-tips">
@@ -243,11 +365,14 @@
             <p>Talking to a loved one or a professional can make a big difference in your mental health.</p>
         </div>
     </section>
-
+<footer>
     <!-- Footer Section -->
-    <footer id="contact">
+    <div style="margin-top: 15px; font-size: 12px; color: #aaa;">
         <p>&copy; 2024 Mental Wellness</p>
-    </footer>
+        <p>Disclaimer: This website is not a substitute for professional medical advice.</p>
+        <h3>Dhruvil and Karuna
+          developer</h3>          </div>
+        </footer>
 
     <!-- JavaScript -->
     <script src="moodtracker.js">

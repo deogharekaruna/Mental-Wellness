@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <style>
       body{
-        background-image: url(MW-at-Work.jpg);
-       
+        background-color: white;
       }
+     /* body{
+        background-image: url(u.jpg);
+       
+      }*/
      
       
       section{
-        background-image: url(e.jpg);
+        background-image: url(sad.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
@@ -171,6 +174,7 @@ button:hover {
 
 
             </ul>
+            <div class="menu-toggle">☰</div>
         </nav>
     </header>
     <div class="game">
@@ -266,20 +270,31 @@ button:hover {
           </section>
 
           <script src="games.js"></script>
-
-          <!--<section id="habit-tracker">
+<!--<section>
+          <div id="habit-tracker">
             <h2>Habit Tracker</h2>
+            <p>Track your daily habits and stay consistent!</p>
             <form id="habit-form">
-              <label for="habit">Enter a habit:</label>
-              <input type="text" id="habit" placeholder="e.g., Drink water" />
+              <t><input
+                 type="text"
+                id="habit-input"
+                placeholder="Enter a habit (e.g., Drink water)"
+                required
+              />
               <button type="submit">Add Habit</button>
             </form>
-            <ul id="habit-list"></ul>
-          </section>-->
+            <ul id="habit-list">
+              <!-- User habits will appear here --
+            </ul>
+            <p id="streak-counter">Current Streak: 0 Days</p>
+          </div>
+        </section>
+
+          <script src="habit list.js"></script>-->
+          <script src="navbar.js"></script>
 
 
          
-          <script src="navbar.js"></script>
 
           <section id="community-forum">
             <h2>Community Forum</h2>
@@ -290,7 +305,7 @@ button:hover {
 
 
 
-          <button id="dark-mode-toggle">Dark Mode</button>
+         <center><button id="dark-mode-toggle">Mode</button></center> 
           <script src="toggle dark mode.js"></script>
           
           
@@ -299,11 +314,13 @@ button:hover {
           </div>
           <script src="loading.js"></script>
 
-      <footer class="a">
-        <h3>Dhruvil and <br>Karuna<br>
-           developer</h3>
-        <p>&copy; 2024 Mental Wellness</p>
-    </footer>
+        <footer>
+          <div style="margin-top: 15px; font-size: 12px; color: #aaa;">
+            <p>&copy; 2024 Mental Wellness</p>
+            <p>Disclaimer: This website is not a substitute for professional medical advice.</p>
+            <h3>Dhruvil and Karuna
+              developer</h3>          </div>
+            </footer>
    
     <script src="ai.js"></script>
     <script src="cards.js">
@@ -343,5 +360,15 @@ function checkGuess() {
 }
 
     </script>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>

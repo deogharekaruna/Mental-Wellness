@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <style>
+        #calm-catcher {
+            text-align: center;
+        }
+
+        #game-area {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            margin: 20px auto;
+            border: 2px solid #4CAF50;
+            background-color: #e0f7fa;
+            overflow: hidden;
+        }
+
+        #basket {
+            position: absolute;
+            bottom: 10px;
+            width: 60px;
+            height: 20px;
+            background-color: #4CAF50;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .item {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #ffeb3b;
+            text-align: center;
+            line-height: 30px;
+            font-size: 12px;
+            color: black;
+            border-radius: 50%;
+            left: 50%;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="calm-catcher">
+        <h2>Calm Catcher</h2>
+        <div id="game-area">
+            <div id="basket"></div>
+        </div>
+        <p>Score: <span id="catcher-score">0</span></p>
+
+        <div class="button-container">
+            <button id="start-btn">Start Game</button>
+            <button id="end-btn" disabled>End Game</button>
+        </div>
+    </div>
+
+    <script>
+        const gameArea = document.getElementById("game-area");
+        const basket = document.getElementById("basket");
+        const scoreDisplay = document.getElementById("catcher-score");
+        const startButton = document.getElementById("start-btn");
+        const endButton = document.getElementById("end-btn");
+
+        let score = 0;
+        let gameInterval;
+        let spawnInterval;
+        let gameRunning = false;
+
+        function moveBasket(event) {
+            if (!gameRunning) return;
+            const basketWidth = basket.offsetWidth;
+            const areaWidth = gameArea.offsetWidth;
+
+            let newLeft = parseInt(basket.style.left || "50%");
+            if (event.key === "ArrowLeft" && newLeft > 0) {
+                basket.style.left = newLeft - 20 + "px";
+            } else if (event.key === "ArrowRight" && newLeft + basketWidth < areaWidth) {
+                basket.style.left = newLeft + 20 + "px";
+            }
+        }
+
+        function spawnItem() {
+            const item = document.createElement("div");
+            item.classList.add("item");
+            item.textContent = Math.random() > 0.5 ? "Positive" : "Negative";
+            item.style.left = Math.random() * (gameArea.offsetWidth - 30) + "px";
+            item.style.top = "0px";
+
+            gameArea.appendChild(item);
+
+            const fallInterval = setInterval(() => {
+                let top = parseInt(item.style.top);
+                if (top >= gameArea.offsetHeight - 50) {
+                    const basketLeft = basket.offsetLeft;
+                    const basketRight = basket.offsetLeft + basket.offsetWidth;
+                    const itemLeft = item.offsetLeft;
+                    const itemRight = item.offsetLeft + item.offsetWidth;
+
+                    if (itemLeft < basketRight && itemRight > basketLeft) {
+                        if (item.textContent === "Positive") score++;
+                        else score--;
+                        scoreDisplay.textContent = score;
+                    }
+
+                    clearInterval(fallInterval);
+                    item.remove();
+                } else {
+                    item.style.top = top + 5 + "px";
+                }
+            }, 50);
+        }
+
+        function startGame() {
+            gameRunning = true;
+            score = 0;
+            scoreDisplay.textContent = score;
+            startButton.disabled = true;
+            endButton.disabled = false;
+            spawnInterval = setInterval(spawnItem, 1000);
+        }
+
+        function endGame() {
+            gameRunning = false;
+            clearInterval(spawnInterval);
+            startButton.disabled = false;
+            endButton.disabled = true;
+            alert("Game Over! Your final score is: " + score);
+        }
+
+        document.addEventListener("keydown", moveBasket);
+
+        startButton.addEventListener("click", startGame);
+        endButton.addEventListener("click", endGame);
+    </script>
+</body>
+</html>
